@@ -1,0 +1,118 @@
+<!--            DTD for SALT 1.0 (2002)                       -->
+
+<!ENTITY % boolean "(true | false)">
+<!ENTITY % confidence.value "CDATA">  <!-- should be a float between 0.0 and 1.0 -->
+<!ENTITY % content.type "CDATA">
+<!ENTITY % expression "CDATA">
+<!ENTITY % milliseconds "CDATA">
+<!ENTITY % object.method "CDATA">
+<!ENTITY % listen.mode "(automatic | multiple | single)">
+<!ENTITY % script.statement "CDATA">
+<!ENTITY % script.variable "CDATA">
+<!ENTITY % uri "CDATA">
+<!ENTITY % xpath.query "CDATA">
+<!ENTITY % xpattern.string "CDATA">
+
+<!ELEMENT bind EMPTY>
+<!ATTLIST bind
+	targetattribute		%script.variable;		"value"
+	targetelement		%script.variable;		#REQUIRED
+	targetmethod		%object.method;		#IMPLIED
+	test			%xpattern.string;		#IMPLIED
+	value			%xpath.query;		#IMPLIED
+>
+
+<!ELEMENT content (#PCDATA)>
+<!ATTLIST content
+	href			%uri;			#REQUIRED
+	type			%content.type;		#IMPLIED
+>
+
+<!ELEMENT dtmf (grammar | bind | param)* >
+<!ATTLIST dtmf
+	id			ID			#IMPLIED
+	endsilence		%milliseconds;		#IMPLIED
+	preflush			%boolean;			"false"
+	initialtimeout		%milliseconds;		#IMPLIED
+	interdigittimeout		%milliseconds;		#IMPLIED
+	onerror			%script.statement;		#IMPLIED
+	onkeypress		%script.statement;		#IMPLIED
+	onnoreco			%script.statement;		#IMPLIED
+	onreco			%script.statement;		#IMPLIED
+	onsilence			%script.statement;		#IMPLIED
+>
+
+<!ELEMENT grammar ANY>
+<!ATTLIST grammar
+	name			NMTOKEN			#IMPLIED
+	src			%uri;			#IMPLIED
+	type			%content.type;		"application/srgs+xml"
+	xmlns			%uri;			#IMPLIED
+	xml:lang			CDATA			#IMPLIED
+>
+
+<!ELEMENT listen (record | grammar | bind | param)* >
+<!ATTLIST listen
+	id			ID			#IMPLIED
+	initialtimeout		%milliseconds;		#IMPLIED
+	babbletimeout		%milliseconds;		#IMPLIED
+	maxtimeout		%milliseconds;		#IMPLIED
+	endsilence		%milliseconds;		#IMPLIED
+	reject			%confidence.value;		#IMPLIED
+	xml:lang			CDATA			#IMPLIED
+	mode			%listen.mode;		"automatic"
+	accesskey			CDATA			#IMPLIED
+	style			CDATA			"visibility: hidden"
+	onerror			%script.statement;		#IMPLIED
+	onnoreco			%script.statement;		#IMPLIED
+	onreco			%script.statement;		#IMPLIED
+	onsilence			%script.statement;		#IMPLIED
+	onspeechdetected		%script.statement;		#IMPLIED
+>
+<!-- NOTE: accesskey and style attributes are used only in HTML profiles -->
+
+<!ELEMENT param ANY>
+<!ATTLIST param
+   	xmlns  			%uri;         		#IMPLIED
+   	name   			CDATA 			#REQUIRED
+>
+
+<!ELEMENT prompt (#PCDATA | content | value | param)* >
+<!ATTLIST prompt
+	id			ID			#IMPLIED
+	bargein			%boolean;			"true"
+	prefetch			%boolean;			"false"
+	xmlns			%uri;			#IMPLIED
+	xml:lang			CDATA			#IMPLIED
+	accesskey			CDATA			#IMPLIED
+	style			CDATA			"visibility: hidden"
+	onbargein			%script.statement;		#IMPLIED
+	onbookmark		%script.statement;		#IMPLIED
+	oncomplete		%script.statement;		#IMPLIED
+	onerror			%script.statement;		#IMPLIED
+>
+<!-- NOTE: accesskey and style attributes are used only in HTML profiles -->
+
+<!-- default audio MEDIA type conforms to RFC 2361 -->
+<!ELEMENT record EMPTY>
+<!ATTLIST record
+	type			%content.type;		"audio/wav;codec=g711"  
+	beep			%boolean;			"false"
+>
+
+<!ELEMENT smex (bind | param)* >
+<!ATTLIST smex
+	id			ID			#IMPLIED
+	sent			CDATA			#IMPLIED
+	timer			%milliseconds;		#IMPLIED
+	onerror			%script.statement;		#IMPLIED
+	onreceive			%script.statement;		#IMPLIED
+	ontimeout			%script.statement;		#IMPLIED
+>
+
+<!ELEMENT value EMPTY>
+<!ATTLIST value
+	targetattribute		%script.variable;		#IMPLIED
+	targetelement		%script.variable;		#IMPLIED
+>
+

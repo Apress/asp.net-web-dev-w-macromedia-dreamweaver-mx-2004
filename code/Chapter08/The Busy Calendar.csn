@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<snippet name="The Busy Calendar" description="The ASP.NET Calendar I spent hours customizing and don't want to redo every time" preview="code" type="wrap">
+<insertText location="beforeSelection">
+<![CDATA[<asp:Calendar width="300" height="300" BackColor="#CCCCCC" BorderColor="#333333" BorderStyle="solid" CellPadding="1" CellSpacing="1" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="Monday" Font-Name="Tahoma" Font-Size="10pt" ForeColor="#3366FF" ID="oneBusyCalendar" NextMonthText="&gt;&gt;" NextPrevFormat="ShortMonth" NextPrevStyle-BackColor="#330099" NextPrevStyle-ForeColor="#CC0033" PrevMonthText="&lt;&lt;" runat="server" SelectedDayStyle-BackColor="#CC0000" SelectedDayStyle-ForeColor="#000000" SelectionMode="DayWeek" SelectorStyle-BackColor="#CC0000" SelectorStyle-ForeColor="#000000" TitleFormat="MonthYear" ToolTip="one busy calendar!" WeekendDayStyle-BackColor="#000000" WeekendDayStyle-ForeColor="#00FF00"></asp:Calendar>]]>
+</insertText>
+<insertText location="afterSelection"><![CDATA[]]>
+</insertText>
+</snippet>

@@ -1,0 +1,9 @@
+<group name="Country Specific Data" version="7.0" serverBehavior="Country Specific Data.htm">
+	<TITLE>Country Specific Data (@@Culture__string@@, @@Redirection__message@@, @@Welcoming__message@@)</TITLE>
+	<groupParticipants selectParticipant="Country Specific Dat_block3">
+		<groupParticipant name="Country Specific Dat_block1" partType="member" />
+		<groupParticipant name="Country Specific Dat_block2" partType="member" />
+		<groupParticipant name="Country Specific Dat_block3" partType="identifier" />
+		<groupParticipant name="Country Specific Dat_block4" partType="member" />
+	</groupParticipants>
+</group>

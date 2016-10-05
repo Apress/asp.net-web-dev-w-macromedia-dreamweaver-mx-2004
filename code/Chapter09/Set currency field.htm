@@ -1,0 +1,308 @@
+<!-- auto-generated=true -->
+<!DOCTYPE HTML SYSTEM "-//Macromedia//DWExtension layout-engine 5.0//dialog">
+
+<HTML>
+<HEAD>
+<TITLE>Set currency field</TITLE>
+
+<SCRIPT SRC="../../Shared/Common/Scripts/dwscripts.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Common/Scripts/dwscriptsServer.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Common/Scripts/dwscriptsExtData.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Common/Scripts/ServerBehaviorClass.js"></SCRIPT>
+
+<SCRIPT SRC="../../Shared/Common/Scripts/ListControlClass.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Controls/Scripts/RecordsetMenu.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Controls/Scripts/RecordsetFieldMenu.js"></SCRIPT>
+<SCRIPT>
+
+var _DataSet__Name = new RecordsetMenu("Set currency field.htm", "DataSet__Name", "");
+var _Currency__Symbol__DataField = new RecordsetFieldMenu("Set currency field.htm", "Currency__Symbol__DataField", "");
+var _Numerical__DataField = new RecordsetFieldMenu("Set currency field.htm", "Numerical__DataField", "");
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   initializeUI
+//
+// DESCRIPTION:
+//   Prepare the dialog and controls for user input
+//
+// ARGUMENTS:
+//   none
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function initializeUI()
+{
+  var elts;
+
+  _DataSet__Name.initializeUI();
+  _Currency__Symbol__DataField.initializeUI();
+  _Numerical__DataField.initializeUI();
+
+  elts = document.forms[0].elements;
+  if (elts && elts.length)
+    elts[0].focus();
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   findServerBehaviors
+//
+// DESCRIPTION:
+//   Returns an array of ServerBehavior objects, each one representing
+//   an instance of this Server Behavior on the page
+//
+// ARGUMENTS:
+//   none
+//
+// RETURNS:
+//   JavaScript Array of ServerBehavior objects
+//--------------------------------------------------------------------
+function findServerBehaviors()
+{
+  _DataSet__Name.findServerBehaviors();
+  _Currency__Symbol__DataField.findServerBehaviors();
+  _Numerical__DataField.findServerBehaviors();
+
+  sbArray = dwscripts.findSBs();
+
+  return sbArray;
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   canApplyServerBehavior
+//
+// DESCRIPTION:
+//   Returns true if a Server Behavior can be applied to the current
+//   document
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   boolean - true if the behavior can be applied, false otherwise
+//--------------------------------------------------------------------
+function canApplyServerBehavior(sbObj)
+{
+  var success = true;
+  if (success)
+  {
+    success = _DataSet__Name.canApplyServerBehavior(sbObj);
+  }
+  if (success)
+  {
+    success = _Currency__Symbol__DataField.canApplyServerBehavior(sbObj);
+  }
+  if (success)
+  {
+    success = _Numerical__DataField.canApplyServerBehavior(sbObj);
+  }
+  if (success)
+  {
+    success = dwscripts.canApplySB(sbObj, false); // preventNesting is false
+  }
+  return success;
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   applyServerBehavior
+//
+// DESCRIPTION:
+//   Collects values from the form elements in the dialog box and
+//   adds the Server Behavior to the user's document
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   string - empty upon success, or an error message
+//--------------------------------------------------------------------
+function applyServerBehavior(sbObj)
+{
+  var paramObj = new Object();
+  var errStr = "";
+
+  if (!errStr)
+  {
+    errStr = _DataSet__Name.applyServerBehavior(sbObj, paramObj);
+  }
+  if (!errStr)
+  {
+    errStr = _Currency__Symbol__DataField.applyServerBehavior(sbObj, paramObj);
+  }
+  if (!errStr)
+  {
+    errStr = _Numerical__DataField.applyServerBehavior(sbObj, paramObj);
+  }
+
+  if (!errStr)
+  {
+    dwscripts.fixUpSelection(dw.getDocumentDOM(), true, true);
+    dwscripts.applySB(paramObj, sbObj);
+  }
+  return errStr;
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   inspectServerBehavior
+//
+// DESCRIPTION:
+//   Sets the values of the form elements in the dialog box based
+//   on the given ServerBehavior object
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function inspectServerBehavior(sbObj)
+{
+  _DataSet__Name.inspectServerBehavior(sbObj);
+  _Currency__Symbol__DataField.inspectServerBehavior(sbObj);
+  _Numerical__DataField.inspectServerBehavior(sbObj);
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   deleteServerBehavior
+//
+// DESCRIPTION:
+//   Remove the specified Server Behavior from the user's document
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function deleteServerBehavior(sbObj)
+{
+  _DataSet__Name.deleteServerBehavior(sbObj);
+  _Currency__Symbol__DataField.deleteServerBehavior(sbObj);
+  _Numerical__DataField.deleteServerBehavior(sbObj);
+
+  dwscripts.deleteSB(sbObj);
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   analyzeServerBehavior
+//
+// DESCRIPTION:
+//   Performs extra checks needed to determine if the Server Behavior
+//   is complete
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//   allRecs - JavaScripts Array of ServerBehavior objects - all of the
+//             ServerBehavior objects known to Dreamweaver
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function analyzeServerBehavior(sbObj, allRecs)
+{
+  _DataSet__Name.analyzeServerBehavior(sbObj, allRecs);
+  _Currency__Symbol__DataField.analyzeServerBehavior(sbObj, allRecs);
+  _Numerical__DataField.analyzeServerBehavior(sbObj, allRecs);
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   updateUI
+//
+// DESCRIPTION:
+//   Called from controls to update the dialog based on user input
+//
+// ARGUMENTS:
+//   controlName - string - the name of the control which called us
+//   event - string - the name of the event which triggered this call
+//           or null
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function updateUI(controlName, event)
+{
+  if (window["_" + controlName] != null)
+  {
+    var controlObj = window["_" + controlName];
+
+    if (_DataSet__Name.updateUI != null)
+    {
+      _DataSet__Name.updateUI(controlObj, event);
+    }
+    if (_Currency__Symbol__DataField.updateUI != null)
+    {
+      _Currency__Symbol__DataField.updateUI(controlObj, event);
+    }
+    if (_Numerical__DataField.updateUI != null)
+    {
+      _Numerical__DataField.updateUI(controlObj, event);
+    }
+  }
+}
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY onLoad="initializeUI()">
+<FORM NAME="theForm">
+  <TABLE BORDER=0>
+    <TR>
+      <TD ALIGN="right" VALIGN="baseline" NOWRAP>
+        DataSet Name:
+      </TD>
+      <TD VALIGN="baseline" NOWRAP>
+        <SELECT STYLE="width:150px" NAME="DataSet__Name">
+          <OPTION SELECTED>*** No %s Found</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR><TD HEIGHT="1"></TD></TR>
+    <TR>
+      <TD ALIGN="right" VALIGN="baseline" NOWRAP>
+        Currency Symbol DataField:
+      </TD>
+      <TD VALIGN="baseline" NOWRAP>
+        <SELECT STYLE="width:150px" NAME="Currency__Symbol__DataField">
+          <OPTION SELECTED>*** No Field Found</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR><TD HEIGHT="1"></TD></TR>
+    <TR>
+      <TD ALIGN="right" VALIGN="baseline" NOWRAP>
+        Numerical DataField:
+      </TD>
+      <TD VALIGN="baseline" NOWRAP>
+        <SELECT STYLE="width:150px" NAME="Numerical__DataField">
+          <OPTION SELECTED>*** No Field Found</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR><TD HEIGHT="1"></TD></TR>
+  </TABLE>
+</FORM>
+</BODY>
+</HTML>
+

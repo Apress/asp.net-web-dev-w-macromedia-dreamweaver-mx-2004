@@ -1,0 +1,7 @@
+<participant version="7.0">
+	<insertText location="aboveHTML+49"><![CDATA[<%@ Import Namespace="System.Threading" %>]]></insertText>
+	<searchPatterns whereToSearch="directive">
+		<searchPattern paramNames="" isOptional="false" limitSearch="all"><![CDATA[/<%@ Import Namespace="System\.Threading" %>/i]]></searchPattern>
+	</searchPatterns>
+	<quickSearch>Namespace="System.Threading"</quickSearch>
+</participant>

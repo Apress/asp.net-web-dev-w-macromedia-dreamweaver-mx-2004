@@ -1,0 +1,22 @@
+<participant version="7.0">
+	<insertText location="beforeSelection"><![CDATA[<%
+' our website caters for certain customers only - create a culture object to compare to user's culture
+Dim cultOursite As String
+cultOursite = "@@Culture__string@@"
+' the user's preferred local culture (language, date format etc.)
+Dim cultLocal As CultureInfo
+' we need to take a first guess at the user's locale from browser info
+cultLocal = CultureInfo.CreateSpecificCulture(Request.UserLanguages(0))
+' start of condition
+If (cultLocal.toString()=cultOursite) Then
+	' assign the culture information object to the current sessions thread
+	Thread.CurrentThread.CurrentCulture = cultLocal
+	Thread.CurrentThread.CurrentUICulture = cultLocal
+	' display the data with a welcome message
+	Response.Write("@@Welcoming__message@@")
+%>]]></insertText>
+	<searchPatterns whereToSearch="directive">
+		<searchPattern paramNames="Culture__string,Welcoming__message" isOptional="false" limitSearch="all"><![CDATA[/' our website caters for certain customers only - create a culture object to compare to user's culture(?:\r\n|\r(?!\n)|\n)[ \t]*Dim cultOursite As String(?:\r\n|\r(?!\n)|\n)[ \t]*cultOursite = "([^\r\n]*?)"(?:\r\n|\r(?!\n)|\n)[ \t]*' the user's preferred local culture \(language, date format etc\.\)(?:\r\n|\r(?!\n)|\n)[ \t]*Dim cultLocal As CultureInfo(?:\r\n|\r(?!\n)|\n)[ \t]*' we need to take a first guess at the user's locale from browser info(?:\r\n|\r(?!\n)|\n)[ \t]*cultLocal = CultureInfo\.CreateSpecificCulture\(Request\.UserLanguages\(0\)\)(?:\r\n|\r(?!\n)|\n)[ \t]*' start of condition(?:\r\n|\r(?!\n)|\n)[ \t]*If \(cultLocal\.toString\(\)=cultOursite\) Then(?:\r\n|\r(?!\n)|\n)[ \t]*' assign the culture information object to the current sessions thread(?:\r\n|\r(?!\n)|\n)[ \t]*Thread\.CurrentThread\.CurrentCulture = cultLocal(?:\r\n|\r(?!\n)|\n)[ \t]*Thread\.CurrentThread\.CurrentUICulture = cultLocal(?:\r\n|\r(?!\n)|\n)[ \t]*' display the data with a welcome message(?:\r\n|\r(?!\n)|\n)[ \t]*Response\.Write\("([^\r\n]*?)"\)(?=\r\n|\r|\n|%>)/i]]></searchPattern>
+	</searchPatterns>
+	<quickSearch>CultureInfo.CreateSpecificCulture(Request.UserLanguages(0))</quickSearch>
+</participant>

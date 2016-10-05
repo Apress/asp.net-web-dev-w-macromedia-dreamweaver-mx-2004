@@ -1,0 +1,1 @@
+vbc.exe /t:library /out:bin\CaseStudy.dll /r:System.dll /r:System.Web.dll /r:System.Data.dll /r:System.Drawing.dll /r:bin\DreamweaverCtrls.dll CodeBehind.vb

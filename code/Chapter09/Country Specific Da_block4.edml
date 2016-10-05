@@ -1,0 +1,12 @@
+<participant version="7.0">
+	<insertText location="afterSelection"><![CDATA[<%
+ Else
+ 	Response.Write("@@Redirection__message@@")
+' end of conditional table
+ End If 
+%>]]></insertText>
+	<searchPatterns whereToSearch="directive">
+		<searchPattern paramNames="Redirection__message" isOptional="false" limitSearch="all"><![CDATA[/Else(?:\r\n|\r(?!\n)|\n)[ \t]*Response\.Write\("([^\r\n]*?)"\)(?:\r\n|\r(?!\n)|\n)[ \t]*' end of conditional table(?:\r\n|\r(?!\n)|\n)[ \t]*End If (?=\r\n|\r|\n|%>)/i]]></searchPattern>
+	</searchPatterns>
+	<quickSearch>Response.Write("</quickSearch>
+</participant>

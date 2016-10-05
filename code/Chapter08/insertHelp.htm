@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<!-- Portions Copyright 1999-2002 Macromedia, Inc. All rights reserved. -->
+<TITLE>insertHelp</TITLE>
+<SCRIPT LANGUAGE="javascript">
+<!--
+	// This command was recorded by Dreamweaver MX
+
+	function runCommand()
+	{
+		// asp:ImageButton: <asp:ImageButton id="ImageButton" ImageUrl="/ch8/help.gif" runat="server" />
+		dw.getDocumentDOM().insertHTML('<asp:ImageButton id=\"ImageButton\" ImageUrl=\"/ch8/help.gif\" runat=\"server\" />', false);
+
+		// Copy
+		dw.getDocumentDOM().clipCopy();
+
+		// Right Arrow: 2
+		dw.getDocumentDOM().arrowRight(2);
+
+		// End of Line
+		dw.getDocumentDOM().endOfLine();
+
+		// Right Arrow
+		dw.getDocumentDOM().arrowRight();
+
+		// Paste
+		dw.getDocumentDOM().clipPaste();
+
+	}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="runCommand()" >
+</BODY>
+</HTML>

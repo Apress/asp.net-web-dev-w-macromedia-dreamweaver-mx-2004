@@ -1,0 +1,46 @@
+<macromedia-extension
+	name="Country Specific Data"
+	version="1.0"
+	type="Server Behavior">
+
+	<!-- Describe the author -->
+	
+	<author name="Costas Hadjisotiriou" />
+
+	<!-- List the required/compatible products -->
+	
+	<products>
+		<product name="Dreamweaver" version="6" primary="true" /> 
+	</products> 
+
+	<!-- Describe the extension -->
+	
+	<description>
+	<![CDATA[This is an extension written for Apress. It displays data if the visitor's browser language preference matches the website's.
+	]]>
+	</description>
+
+	<!-- Describe where the extension shows in the UI of the product -->
+
+	<ui-access>
+	<![CDATA[Access by clicking the + button in Server Behaviors tab.
+	]]>
+	</ui-access>
+
+	<!-- Describe the files that comprise the extension -->
+	
+	<files>
+		<file name="Country Specific Data.edml" destination="$dreamweaver/configuration/ServerBehaviors/ASP.NET_VB" />
+		<file name="Country Specific Da_block1.edml" destination="$dreamweaver/configuration/ServerBehaviors/ASP.NET_VB" />
+		<file name="Country Specific Da_block2.edml" destination="$dreamweaver/configuration/ServerBehaviors/ASP.NET_VB" />
+		<file name="Country Specific Da_block3.edml" destination="$dreamweaver/configuration/ServerBehaviors/ASP.NET_VB" />
+		<file name="Country Specific Da_block4.edml" destination="$dreamweaver/configuration/ServerBehaviors/ASP.NET_VB" />
+		<file name="Country Specific Data.htm" destination="$dreamweaver/configuration/ServerBehaviors/ASP.NET_VB" />
+	</files>
+
+	<!-- Describe the changes to the configuration -->
+	
+	<configuration-changes>
+	</configuration-changes>
+
+</macromedia-extension>

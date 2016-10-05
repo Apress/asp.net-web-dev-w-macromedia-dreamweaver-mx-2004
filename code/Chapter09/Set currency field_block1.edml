@@ -1,0 +1,7 @@
+<participant version="6.0">
+	<insertText location="replaceSelection"><![CDATA[<%# @@DataSet__Name@@.FieldValue("@@Currency__Symbol__DataField@@", Container) & Double.Parse(@@DataSet__Name@@.FieldValue("@@Numerical__DataField@@", Container)).ToString("n")  %>]]></insertText>
+	<searchPatterns whereToSearch="directive">
+		<searchPattern paramNames="DataSet__Name,Currency__Symbol__DataField,Numerical__DataField" isOptional="false" limitSearch="all"><![CDATA[/<%# ([^\r\n]*?)\.FieldValue\("([^\r\n]*?)", Container\) & Double\.Parse\([^\r\n]*?\.FieldValue\("([^\r\n]*?)", Container\)\)\.ToString\("n"\)  %>/i]]></searchPattern>
+	</searchPatterns>
+	<quickSearch>Container)).ToString("n")</quickSearch>
+</participant>

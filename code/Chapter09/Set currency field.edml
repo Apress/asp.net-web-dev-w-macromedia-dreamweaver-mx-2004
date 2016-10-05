@@ -1,0 +1,6 @@
+<group name="Set currency field" version="6.0" serverBehavior="Set currency field.htm">
+	<TITLE>Set currency field (@@Currency__Symbol__DataField@@, @@DataSet__Name@@, @@Numerical__DataField@@)</TITLE>
+	<groupParticipants selectParticipant="Set currency field_block1">
+		<groupParticipant name="Set currency field_block1" partType="identifier" />
+	</groupParticipants>
+</group>

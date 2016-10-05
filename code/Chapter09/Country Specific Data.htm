@@ -1,0 +1,300 @@
+<!-- auto-generated=true -->
+<!DOCTYPE HTML SYSTEM "-//Macromedia//DWExtension layout-engine 5.0//dialog">
+
+<HTML>
+<HEAD>
+<TITLE>Country Specific Data</TITLE>
+
+<SCRIPT SRC="../../Shared/Common/Scripts/dwscripts.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Common/Scripts/dwscriptsServer.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Common/Scripts/dwscriptsExtData.js"></SCRIPT>
+<SCRIPT SRC="../../Shared/Common/Scripts/ServerBehaviorClass.js"></SCRIPT>
+
+<SCRIPT SRC="../../Shared/Controls/Scripts/TextField.js"></SCRIPT>
+<SCRIPT>
+
+var _Culture__string = new TextField("Country Specific Data.htm", "Culture__string", "");
+var _Welcoming__message = new TextField("Country Specific Data.htm", "Welcoming__message", "");
+var _Redirection__message = new TextField("Country Specific Data.htm", "Redirection__message", "");
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   initializeUI
+//
+// DESCRIPTION:
+//   Prepare the dialog and controls for user input
+//
+// ARGUMENTS:
+//   none
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function initializeUI()
+{
+  var elts;
+
+  _Culture__string.initializeUI();
+  _Welcoming__message.initializeUI();
+  _Redirection__message.initializeUI();
+
+  elts = document.forms[0].elements;
+  if (elts && elts.length)
+    elts[0].focus();
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   findServerBehaviors
+//
+// DESCRIPTION:
+//   Returns an array of ServerBehavior objects, each one representing
+//   an instance of this Server Behavior on the page
+//
+// ARGUMENTS:
+//   none
+//
+// RETURNS:
+//   JavaScript Array of ServerBehavior objects
+//--------------------------------------------------------------------
+function findServerBehaviors()
+{
+  _Culture__string.findServerBehaviors();
+  _Welcoming__message.findServerBehaviors();
+  _Redirection__message.findServerBehaviors();
+
+  sbArray = dwscripts.findSBs();
+
+  return sbArray;
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   canApplyServerBehavior
+//
+// DESCRIPTION:
+//   Returns true if a Server Behavior can be applied to the current
+//   document
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   boolean - true if the behavior can be applied, false otherwise
+//--------------------------------------------------------------------
+function canApplyServerBehavior(sbObj)
+{
+  var success = true;
+  if (success)
+  {
+    success = _Culture__string.canApplyServerBehavior(sbObj);
+  }
+  if (success)
+  {
+    success = _Welcoming__message.canApplyServerBehavior(sbObj);
+  }
+  if (success)
+  {
+    success = _Redirection__message.canApplyServerBehavior(sbObj);
+  }
+  if (success)
+  {
+    success = dwscripts.canApplySB(sbObj, false); // preventNesting is false
+  }
+  return success;
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   applyServerBehavior
+//
+// DESCRIPTION:
+//   Collects values from the form elements in the dialog box and
+//   adds the Server Behavior to the user's document
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   string - empty upon success, or an error message
+//--------------------------------------------------------------------
+function applyServerBehavior(sbObj)
+{
+  var paramObj = new Object();
+  var errStr = "";
+
+  if (!errStr)
+  {
+    errStr = _Culture__string.applyServerBehavior(sbObj, paramObj);
+  }
+  if (!errStr)
+  {
+    errStr = _Welcoming__message.applyServerBehavior(sbObj, paramObj);
+  }
+  if (!errStr)
+  {
+    errStr = _Redirection__message.applyServerBehavior(sbObj, paramObj);
+  }
+
+  if (!errStr)
+  {
+    dwscripts.fixUpSelection(dw.getDocumentDOM(), true, true);
+    dwscripts.applySB(paramObj, sbObj);
+  }
+  return errStr;
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   inspectServerBehavior
+//
+// DESCRIPTION:
+//   Sets the values of the form elements in the dialog box based
+//   on the given ServerBehavior object
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function inspectServerBehavior(sbObj)
+{
+  _Culture__string.inspectServerBehavior(sbObj);
+  _Welcoming__message.inspectServerBehavior(sbObj);
+  _Redirection__message.inspectServerBehavior(sbObj);
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   deleteServerBehavior
+//
+// DESCRIPTION:
+//   Remove the specified Server Behavior from the user's document
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function deleteServerBehavior(sbObj)
+{
+  _Culture__string.deleteServerBehavior(sbObj);
+  _Welcoming__message.deleteServerBehavior(sbObj);
+  _Redirection__message.deleteServerBehavior(sbObj);
+
+  dwscripts.deleteSB(sbObj);
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   analyzeServerBehavior
+//
+// DESCRIPTION:
+//   Performs extra checks needed to determine if the Server Behavior
+//   is complete
+//
+// ARGUMENTS:
+//   sbObj - ServerBehavior object - one of the objects returned
+//           from findServerBehaviors
+//   allRecs - JavaScripts Array of ServerBehavior objects - all of the
+//             ServerBehavior objects known to Dreamweaver
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function analyzeServerBehavior(sbObj, allRecs)
+{
+  _Culture__string.analyzeServerBehavior(sbObj, allRecs);
+  _Welcoming__message.analyzeServerBehavior(sbObj, allRecs);
+  _Redirection__message.analyzeServerBehavior(sbObj, allRecs);
+}
+
+
+//--------------------------------------------------------------------
+// FUNCTION:
+//   updateUI
+//
+// DESCRIPTION:
+//   Called from controls to update the dialog based on user input
+//
+// ARGUMENTS:
+//   controlName - string - the name of the control which called us
+//   event - string - the name of the event which triggered this call
+//           or null
+//
+// RETURNS:
+//   nothing
+//--------------------------------------------------------------------
+function updateUI(controlName, event)
+{
+  if (window["_" + controlName] != null)
+  {
+    var controlObj = window["_" + controlName];
+
+    if (_Culture__string.updateUI != null)
+    {
+      _Culture__string.updateUI(controlObj, event);
+    }
+    if (_Welcoming__message.updateUI != null)
+    {
+      _Welcoming__message.updateUI(controlObj, event);
+    }
+    if (_Redirection__message.updateUI != null)
+    {
+      _Redirection__message.updateUI(controlObj, event);
+    }
+  }
+}
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY onLoad="initializeUI()">
+<FORM NAME="theForm">
+  <TABLE BORDER=0>
+    <TR>
+      <TD ALIGN="right" VALIGN="baseline" NOWRAP>
+        Culture string:
+      </TD>
+      <TD VALIGN="baseline" NOWRAP>
+        <INPUT TYPE="text" NAME="Culture__string" STYLE="width:150px">
+      </TD>
+    </TR>
+    <TR><TD HEIGHT="1"></TD></TR>
+    <TR>
+      <TD ALIGN="right" VALIGN="baseline" NOWRAP>
+        Welcoming message:
+      </TD>
+      <TD VALIGN="baseline" NOWRAP>
+        <INPUT TYPE="text" NAME="Welcoming__message" STYLE="width:150px">
+      </TD>
+    </TR>
+    <TR><TD HEIGHT="1"></TD></TR>
+    <TR>
+      <TD ALIGN="right" VALIGN="baseline" NOWRAP>
+        Redirection message:
+      </TD>
+      <TD VALIGN="baseline" NOWRAP>
+        <INPUT TYPE="text" NAME="Redirection__message" STYLE="width:150px">
+      </TD>
+    </TR>
+    <TR><TD HEIGHT="1"></TD></TR>
+  </TABLE>
+</FORM>
+</BODY>
+</HTML>
+
